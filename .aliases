@@ -11,14 +11,12 @@ alias d="cd ~/Documents/Dropbox"
 alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
-alias j="jobs"
+#alias j="jobs"
 alias v="vim"
-alias m="mate ."
+#alias m="mate ."
 alias s="subl ."
 alias o="open"
 alias oo="open ."
-
-alias ppj='python -mjson.tool'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

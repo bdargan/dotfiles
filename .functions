@@ -50,6 +50,14 @@ function ppj() {
 	fi
 }
 
+function ppx() {
+	if [ -p /dev/stdin ]; then
+		xmllint --format - | pygmentize -lxml
+	else
+		xmllint --format  <<< "$*" | pygmentize -lxml
+	fi
+}
+
 # All the dig info
 function digga() {
 	dig +nocmd "$1" any +multiline +noall +answer

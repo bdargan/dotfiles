@@ -1,3 +1,6 @@
 [submodule "fasd"]
 	path = fasd
 	url = https://github.com/clvv/fasd.git
+[submodule "smartcd"]
+	path = smartcd
+	url = https://github.com/garethstockwell/smartcd.git

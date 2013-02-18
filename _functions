@@ -41,7 +41,7 @@ function zurl() {
 
 function curlv() {
    gethz "$@"
-   gethv "$@"
+   gethh "$@"
 }
  
 

@@ -111,7 +111,7 @@ for method in get head post put delete trace options patch; do
 	alias "${method}h=curl -X `echo $method | tr a-z A-Z`"
 done
 
-#gethv => get http headers and timing only
+#gethh => get http headers and timing only
 for method in get head post put delete trace options patch; do
 	alias "${method}hh=curl -iv -X `echo $method | tr a-z A-Z` -w"size:%{size_download},first_byte:%{time_starttransfer},time:%{time_total}" -o /dev/null "
 done

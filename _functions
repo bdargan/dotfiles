@@ -39,6 +39,12 @@ function zurl() {
 	curl -sH --compressed  "$@" | gunzip
 }
 
+function curlv() {
+   gethz "$@"
+   gethh "$@"
+}
+ 
+
 # Syntax-highlight JSON strings or files
 function ppj() {
 	if [ -p /dev/stdin ]; then

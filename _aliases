@@ -28,6 +28,9 @@ alias time2='date "+%Y-%m-%dT%H:%M:%S"'
 alias time3='date "+%Y-%m-%dT%H:%M:%S"'
 
 
+#Search
+alias ag='nocorrect ag'
+
 #Web Stuff
 
 
@@ -44,7 +47,6 @@ alias l="ls -l ${colorflag}"
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
 
-# List only directories
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
 # Always use color output for `ls`

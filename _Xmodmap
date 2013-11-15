@@ -1,3 +1,5 @@
 !Caps Lock to control
 remove Lock = Caps_Lock
-keysym Caps_Lock = Control
+keysym Caps_Lock = Control_L
+! Tell X11 that the delete key (above the spacebar) should send a C-? (control questionmark) instead of c-h.
+!keycode 59=127

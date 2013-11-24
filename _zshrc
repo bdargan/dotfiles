@@ -31,7 +31,7 @@ ZSH_THEME="blinks"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(fasd ssh-agent git sublime osx github extract brew virtualenvwrapper redis-cli)
+plugins=(fasd ssh-agent git sublime osx github extract brew vagrant virtualenvwrapper redis-cli)
 
 source ~/.aliases
 

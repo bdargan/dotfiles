@@ -34,6 +34,7 @@ ZSH_THEME="blinks"
 plugins=(fasd ssh-agent git sublime osx github extract brew vagrant virtualenvwrapper redis-cli)
 
 source ~/.aliases
+source ~/.functions
 
 source $ZSH/oh-my-zsh.sh
 

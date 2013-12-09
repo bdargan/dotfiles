@@ -67,6 +67,10 @@ alias whois="whois -h whois-servers.net"
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
 
+alias duu='for i in $(ls -F -c1  /Volumes | grep -v "\@$"); diskutil umount "/Volumes/$i"'
+alias duf='for i in $(ls -F -c1  /Volumes | grep -v "\@$"); diskutil unmount force "/Volumes/$i"'
+alias vbox='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""

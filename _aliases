@@ -130,3 +130,8 @@ done
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+alias selfsignedcert='openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes'
+
+alias rndc64='dd if=/dev/urandom bs=64 count=1 2>/dev/null | uuencode - | head -n 2 | grep -v begin | cut -b 2-64'
+alias rndcbase64='head -c 64 /dev/urandom | base64'

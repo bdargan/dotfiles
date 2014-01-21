@@ -117,9 +117,11 @@ for method in get head post put delete trace options patch; do
 	alias "${method}h=curl -X `echo $method | tr a-z A-Z`"
 done
 
-#gethh => get http headers and timing only
+#gett => get http timing only
+#getht => get http headers and timing only
 for method in get head post put delete trace options patch; do
-	alias "${method}hh=curl -iv -X `echo $method | tr a-z A-Z` -w"size:%{size_download},first_byte:%{time_starttransfer},time:%{time_total}" -o /dev/null "
+	alias "${method}ht=curl -siv -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}" -o /dev/null "
+	alias "${method}t=curl -s -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}" -o /dev/null "
 done
 
 #gethz => get http headers and timing only
@@ -127,14 +129,25 @@ for method in get head post put delete trace options patch; do
 	alias "${method}hz=curl -iv -X `echo $method | tr a-z A-Z` --compressed -w"size:%{size_download},first_byte:%{time_starttransfer},time:%{time_total}" -o /dev/null "
 done
 
+#Dates
+alias woy='date +"%gW%W"'
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 alias selfsignedcert='openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes'
+#alias genkeys='openssl genrsa 2048'
+#csrreq openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout private.pem -out server.csr
 
 alias rndc64='dd if=/dev/urandom bs=64 count=1 2>/dev/null | uuencode - | head -n 2 | grep -v begin | cut -b 2-64'
 alias rndcbase64='head -c 64 /dev/urandom | base64'
 
 #restart virtual box as root, so networking just works.
 alias fixvb='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+
+alias sqldev='/Applications/SQLDeveloper.app/Contents/Resources/sqldeveloper/sqldeveloper/bin/sqLDeveloper'
+
+#requires brew install coretuils
+if [[ $('uname') == 'Darwin' ]]; then
+        alias readlink='greadlink'
+fi

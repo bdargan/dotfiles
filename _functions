@@ -60,7 +60,7 @@ function zurl() {
 #get a url with and w/o accept gzip, to check for gzip support
 function curlv() {
    gethz "$@"
-   gethh "$@"
+   getht "$@"
 }
  
 

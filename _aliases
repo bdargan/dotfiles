@@ -126,7 +126,7 @@ done
 
 #gethz => get http headers and timing only
 for method in get head post put delete trace options patch; do
-	alias "${method}hz=curl -iv -X `echo $method | tr a-z A-Z` --compressed -w"size:%{size_download},first_byte:%{time_starttransfer},time:%{time_total}" -o /dev/null "
+	alias "${method}hz=curl -iv -X `echo $method | tr a-z A-Z` --compressed -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}" -o /dev/null "
 done
 
 #Dates

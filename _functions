@@ -106,3 +106,12 @@ function codepoint() {
 	perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
 	echo # newline
 }
+
+#large files in this directory
+function lf() {
+du -h |
+  awk '{printf "%s %08.2f\t%s\n", 
+    index("KMG", substr($1, length($1))),
+    substr($1, 0, length($1)-1), $0}' |
+  sort -r | cut -f2,3
+}

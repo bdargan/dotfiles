@@ -119,14 +119,12 @@ done
 
 #gett => get http timing only
 #getht => get http headers and timing only
-for method in get head post put delete trace options patch; do
-	alias "${method}ht=curl -siv -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}" -o /dev/null "
-	alias "${method}t=curl -s -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}" -o /dev/null "
-done
-
 #gethz => get http headers and timing only
 for method in get head post put delete trace options patch; do
-	alias "${method}hz=curl -iv -X `echo $method | tr a-z A-Z` --compressed -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}" -o /dev/null "
+	alias "${method}ht=curl -siv -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+	alias "${method}t=curl -s -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+	alias "${method}tz=curl -s -X `echo $method | tr a-z A-Z` --compressed -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+        alias "${method}hz=curl -iv -X `echo $method | tr a-z A-Z` --compressed -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
 done
 
 #Dates

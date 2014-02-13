@@ -107,6 +107,7 @@ alias spotoff="sudo mdutil -a -i off"
 alias spoton="sudo mdutil -a -i on"
 
 alias plistbuddy="/usr/libexec/PlistBuddy"
+alias emacs=emacsf
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"

@@ -20,7 +20,7 @@ function server() {
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
-function emacs()
+function emacsf()
 {
     if [ -e "$@" ]
     then
@@ -80,6 +80,14 @@ function ppx() {
 		xmllint --format - | pygmentize -lxml
 	else
 		xmllint --format  <<< "$*" | pygmentize -lxml
+	fi
+}
+#format plaintext no pygmentize
+function ppxt() {
+	if [ -p /dev/stdin ]; then
+		xmllint --format - 
+	else
+		xmllint --format  <<< "$*" 
 	fi
 }
 

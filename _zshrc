@@ -39,6 +39,9 @@ source ~/.functions
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export ANSIBLE_TRANSPORT="ssh"
+export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
+export NODE_ENV=dev
 export VAGRANT_HOME=/Volumes/dargz/.vagrant.d
 export DOCKER_HOST=tcp://127.0.0.1:4243
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:~/bin:$PATH"

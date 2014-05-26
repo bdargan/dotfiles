@@ -138,7 +138,7 @@ alias selfsignedcert='openssl req -x509 -newkey rsa:2048 -keyout key.pem -out ce
 #alias genkeys='openssl genrsa 2048'
 #csrreq openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout private.pem -out server.csr
 
-alias pwdgen='apg -a 1 -m20 -n 12
+alias pwdgen='apg -a 1 -m20 -n 12'
 #apg -a 1 -m20 -n 30 -E '<>[]//'
 alias rndc64='dd if=/dev/urandom bs=64 count=1 2>/dev/null | uuencode - | head -n 2 | grep -v begin | cut -b 2-64'
 alias rndcbase64='head -c 64 /dev/urandom | base64'

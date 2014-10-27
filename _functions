@@ -123,3 +123,8 @@ du -h |
     substr($1, 0, length($1)-1), $0}' |
   sort -r | cut -f2,3
 }
+
+#large files everywhere, OSX
+#find 200Mb files
+# mdfind 'kMDItemFSSize > 200000000'
+

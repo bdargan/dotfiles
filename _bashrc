@@ -3,3 +3,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/Brett/.gvm/bin/gvm-init.sh" ]] && source "/Users/Brett/.gvm/bin/gvm-init.sh"

@@ -43,3 +43,6 @@ export VAGRANT_HOME=/Volumes/dargz/.vagrant.d
 export DOCKER_HOST=tcp://127.0.0.1:4243
 
 export PATH=$PATH:/usr/local/bin:./node_modules/.bin:/Volumes/dargz/bin
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/Brett/.gvm/bin/gvm-init.sh" ]] && source "/Users/Brett/.gvm/bin/gvm-init.sh"

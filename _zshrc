@@ -54,3 +54,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/loca
 export PATH=$PATH:/usr/local/bin:./node_modules/.bin:/Volumes/dargz/bin
 PATH=$PATH:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local/share/npm/lib/node_modules/bower/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/Brett/.gvm/bin/gvm-init.sh" ]] && source "/Users/Brett/.gvm/bin/gvm-init.sh"

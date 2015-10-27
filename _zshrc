@@ -44,7 +44,7 @@ export ANSIBLE_TRANSPORT="ssh"
 export ANSIBLE_SSH_ARGS="-o ForwardAgent=yes"
 export NODE_ENV=dev
 export VAGRANT_HOME=/Volumes/dargz/.vagrant.d
-export DOCKER_HOST=tcp://127.0.0.1:4243
+export DOCKER_OPTS="--rm -dns 8.8.8.8 -dns 8.8.4.4"
 
 if [[ $('uname') == 'Darwin' ]]; then
   export JAVA_HOME="`/usr/libexec/java_home -v '1.7*'`"
@@ -55,6 +55,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/loca
 export PATH=$PATH:/usr/local/bin:./node_modules/.bin:/Volumes/dargz/bin
 PATH=$PATH:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local/share/npm/lib/node_modules/bower/bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/Cellar/postgresql/9.4.4/bin/
+source /usr/local/opt/nvm/nvm.sh
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/Brett/.gvm/bin/gvm-init.sh" ]] && source "/Users/Brett/.gvm/bin/gvm-init.sh"

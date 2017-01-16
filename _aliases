@@ -130,6 +130,13 @@ done
 
 #Dates
 alias woy='date +"%gW%W"'
+alias ymd='date +"%Y-%m-%d"'
+alias dmy='date +"%d-%m-%y"'
+alias dmyy='date +"%d-%m-%Y"'
+alias ymond='date +"%y-%b-%d"'
+alias yymond='date +"%Y-%b-%d"'
+alias dmony='date +"%d-%b-%y"'
+alias dmonyy='date +"%d-%b-%Y"'
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
@@ -149,19 +156,6 @@ alias rndcbase64='head -c 64 /dev/urandom | base64'
 alias fixvb='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
 alias sqldev='/Applications/SQLDeveloper.app/Contents/Resources/sqldeveloper/sqldeveloper/bin/sqLDeveloper'
-
-#zipid-pdor
-alias ssh-app1='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh -i ~/.ssh/zipid-prod-v2.pub zipid@172.31.36.204'
-alias ssh-app2='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh -i ~/.ssh/zipid-prod-v2.pub zipid@172.31.36.24'
-
-alias ssh-web1='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh ubuntu@172.31.33.106'
-alias ssh-web2='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh ubuntu@172.31.34.165'
-
-#zipid-staging
-alias ssh-web1.staging='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh ubuntu@172.32.1.229'
-alias ssh-app2.staging='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh -i .ssh/zipid-test-shared.pem ubuntu@172.32.3.246'
-alias ssh-app1.staging='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh -i .ssh/zipid-test-shared.pem ubuntu@172.32.3.253'
-alias ssh-app3.staging='nocorrect ssh teamcity@appmgr.zipid.com.au -t  ssh -i .ssh/zipid-test-shared.pem ubuntu@172.32.3.51'
 
 #requires brew install coretuils
 if [[ $('uname') == 'Darwin' ]]; then

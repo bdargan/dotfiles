@@ -35,6 +35,7 @@ SOLARIZED_THEME="light"
 plugins=(fasd ssh-agent git sublime osx github extract brew vagrant virtualenvwrapper redis-cli)
 
 source ~/.aliases
+source ~/.aliases-private
 source ~/.functions
 
 source $ZSH/oh-my-zsh.sh

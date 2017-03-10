@@ -1,2 +1,0 @@
-export GRAILS_HOME=/Users/Brett/work/tools/grails-2.1.0/grails-2.1.0
-export PATH=$PATH:$GRAILS_HOME/bin

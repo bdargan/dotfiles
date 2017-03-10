@@ -7,17 +7,20 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
 # Shortcuts
-alias d="cd ~/Documents/Dropbox"
-alias p="cd ~/Projects"
 alias g="git"
 alias h="history"
-#alias j="jobs"
 alias v="vim"
-#alias m="mate ."
-alias s="subl ."
 alias o="open"
 alias oo="open ."
 
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
 
 alias ppj="python -mjson.tool"
 #alias ppx=""
@@ -161,3 +164,7 @@ alias sqldev='/Applications/SQLDeveloper.app/Contents/Resources/sqldeveloper/sql
 if [[ $('uname') == 'Darwin' ]]; then
         alias readlink='greadlink'
 fi
+
+#docker
+alias docker-rm-old-containers='docker rm $( docker ps -q -f status=exited)'
+alias docker-rm-dangling-images='docker rmi $( docker images -q -f dangling=true)'

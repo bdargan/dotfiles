@@ -156,6 +156,8 @@ if [[ $('uname') == 'Darwin' ]]; then
         alias readlink='greadlink'
 fi
 
+#aws codecommit
+alias cleargitpass='security delete-internet-password -l  git-codecommit.us-west-2.amazonaws.com'
 #docker
 alias docker-rm-old-containers='docker rm $( docker ps -q -f status=exited)'
 alias docker-rm-dangling-images='docker rmi $( docker images -q -f dangling=true)'

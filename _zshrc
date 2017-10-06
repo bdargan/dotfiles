@@ -32,8 +32,8 @@ SOLARIZED_THEME="light"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-#plugins=(fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli docker)
-plugins=(git osx fasd github ssh-agent autoenv extract virtualenvwrapper redis-cli docker)
+#plugins=(fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli )
+plugins=(git osx fasd github ssh-agent autoenv extract virtualenvwrapper redis-cli )
 
 source ~/.aliases
 source ~/.aliases-private

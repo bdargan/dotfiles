@@ -10,7 +10,7 @@ alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias j='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 
 alias ppj="python -mjson.tool"
@@ -158,6 +158,11 @@ fi
 
 #aws codecommit
 alias cleargitpass='security delete-internet-password -l  git-codecommit.us-west-2.amazonaws.com'
+
 #docker
 alias docker-rm-old-containers='docker rm $( docker ps -q -f status=exited)'
 alias docker-rm-dangling-images='docker rmi $( docker images -q -f dangling=true)'
+
+# private docker registry
+alias npm-default='npm config set registry https://registry.npmjs.org'
+alias npm-sinopia='npm config set registry http://localhost:4873/'

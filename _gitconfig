@@ -1,0 +1,7 @@
+[user]
+  name = Brett Dargan
+  email = brett.dargan@gmail.com
+
+[credential]
+	#helper = !aws --profile zipid-brett codecommit credentital-helper $@
+        UseHttpPath = true

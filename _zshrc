@@ -32,8 +32,11 @@ SOLARIZED_THEME="light"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-#plugins=(fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli )
-plugins=(git osx fasd github ssh-agent autoenv extract virtualenvwrapper redis-cli )
+plugins=(fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli )
+#plugins=(git osx fasd github ssh-agent autoenv extract )
+#virtualenvwrapper redis-cli )
+
+export PATH="$HOME/code/homebrew/bin:$PATH"
 
 source ~/.aliases
 source ~/.aliases-private
@@ -52,10 +55,7 @@ if [[ $('uname') == 'Darwin' ]]; then
   export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
   export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk"
 fi
-
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:~/bin:$PATH"
-export PATH=$PATH:/usr/local/bin:./node_modules/.bin:/Volumes/dargz/bin
-PATH=$PATH:/usr/local/share/npm/lib/node_modules/grunt-cli/bin:/usr/local/share/npm/lib/node_modules/bower/bin
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/local/Cellar/postgresql/9.4.4/bin/
-source /usr/local/opt/nvm/nvm.sh
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/bin:$PATH"
+#export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:~/bin:$PATH"
+source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
+export NVM_DIR="$HOME/.nvm"

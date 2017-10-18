@@ -59,3 +59,4 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/bin:$PATH"
 #export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:~/bin:$PATH"
 source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
 export NVM_DIR="$HOME/.nvm"
+source /Users/bdargan/code/homebrew/opt/autoenv/activate.sh

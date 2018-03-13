@@ -62,7 +62,7 @@ function curlv() {
    gethz "$@"
    getht "$@"
 }
- 
+
 
 # Syntax-highlight JSON strings or files
 function ppj() {
@@ -85,9 +85,9 @@ function ppx() {
 #format plaintext no pygmentize
 function ppxt() {
 	if [ -p /dev/stdin ]; then
-		xmllint --format - 
+		xmllint --format -
 	else
-		xmllint --format  <<< "$*" 
+		xmllint --format  <<< "$*"
 	fi
 }
 
@@ -118,7 +118,7 @@ function codepoint() {
 #large files in this directory
 function lf() {
 du -h |
-  awk '{printf "%s %08.2f\t%s\n", 
+  awk '{printf "%s %08.2f\t%s\n",
     index("KMG", substr($1, length($1))),
     substr($1, 0, length($1)-1), $0}' |
   sort -r | cut -f2,3
@@ -127,4 +127,35 @@ du -h |
 #large files everywhere, OSX
 #find 200Mb files
 # mdfind 'kMDItemFSSize > 200000000'
+
+
+
+myip() {
+    local _ip _myip _line _nl=$'\n'
+    while IFS=$': \t' read -a _line ;do
+        [ -z "${_line%inet}" ] &&
+           _ip=${_line[${#_line[1]}>4?1:2]} &&
+           [ "${_ip#127.0.0.1}" ] && _myip=$_ip
+      done< <(LANG=C /sbin/ifconfig)
+    printf ${1+-v} $1 "%s${_nl:0:$[${#1}>0?0:1]}" $_myip
+}
+
+pathappend() {
+  for ARG in "$@"
+  do
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$ARG"
+    fi
+  done
+}
+
+pathprepend() {
+  for ((i=$#; i>0; i--));
+  do
+    ARG=${!i}
+    if [ -d "$ARG" ] && [[ ":$PATH:" != *":$ARG:"* ]]; then
+        PATH="$ARG${PATH:+":$PATH"}"
+    fi
+  done
+}
 

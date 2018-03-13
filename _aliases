@@ -124,7 +124,8 @@ done
 
 #Dates
 alias woy='date +"%gW%W"'
-alias ymd='date +"%Y-%m-%d"'
+alias Ymd='date +"%Y-%m-%d"'
+alias ymd='date +"%y-%m-%d"'
 alias dmy='date +"%d-%m-%y"'
 alias dmyy='date +"%d-%m-%Y"'
 alias ymond='date +"%y-%b-%d"'

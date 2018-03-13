@@ -1,0 +1,8 @@
+#!/bin/bash
+function docker_clean_images() {
+    # the following command will remove all stopped containers
+    docker rm $( docker ps -q -f status=exited)
+    docker rmi $(docker images -f "dangling=true" -q)
+    docker rmi $(docker images | grep "^<none>" | awk '{print $3}')
+}
+alias d-c=docker_clean_images

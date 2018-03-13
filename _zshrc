@@ -32,7 +32,7 @@ SOLARIZED_THEME="light"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli )
+plugins=(docker fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli )
 #plugins=(git osx fasd github ssh-agent autoenv extract )
 #virtualenvwrapper redis-cli )
 
@@ -55,8 +55,10 @@ if [[ $('uname') == 'Darwin' ]]; then
   export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
   export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk"
 fi
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:~/bin:$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$HOME/bin:$HOME/Library/Python/3.6/bin:$PATH"
 #export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:~/bin:$PATH"
-source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
 export NVM_DIR="$HOME/.nvm"
+source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
 source /Users/bdargan/code/homebrew/opt/autoenv/activate.sh
+
+source `which aws_zsh_completer.sh`

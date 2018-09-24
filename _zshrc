@@ -57,8 +57,12 @@ if [[ $('uname') == 'Darwin' ]]; then
 fi
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:$HOME/bin:$HOME/Library/Python/3.6/bin:$PATH"
 #export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:~/bin:$PATH"
+#export NPM_PACKAGES="${HOME}/.npm-packages"
 export NVM_DIR="$HOME/.nvm"
 source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
 source /Users/bdargan/code/homebrew/opt/autoenv/activate.sh
+
+export LDFLAGS="-L/Users/bdargan/code/homebrew/opt/openssl/lib"
+export CPPFLAGS="-I/Users/bdargan/code/homebrew/opt/openssl/include"
 
 source `which aws_zsh_completer.sh`

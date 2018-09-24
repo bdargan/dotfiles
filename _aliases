@@ -167,3 +167,7 @@ alias docker-rm-dangling-images='docker rmi $( docker images -q -f dangling=true
 # private docker registry
 alias npm-default='npm config set registry https://registry.npmjs.org'
 alias npm-sinopia='npm config set registry http://localhost:4873/'
+
+autoload -U zmv
+alias mmv='noglob zmv -W'
+alias mmvn='noglob zmv -W -n'

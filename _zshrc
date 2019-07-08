@@ -32,7 +32,7 @@ SOLARIZED_THEME="light"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(docker fasd ssh-agent git osx github extract brew virtualenvwrapper redis-cli )
+plugins=(docker fasd ssh-agent git git-prompt osx github extract brew virtualenvwrapper redis-cli )
 #plugins=(git osx fasd github ssh-agent autoenv extract )
 #virtualenvwrapper redis-cli )
 
@@ -63,7 +63,8 @@ export NVM_DIR="$HOME/.nvm"
 source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
 source /Users/bdargan/code/homebrew/opt/autoenv/activate.sh
 
-export LDFLAGS="-L/Users/bdargan/code/homebrew/opt/openssl/lib"
-export CPPFLAGS="-I/Users/bdargan/code/homebrew/opt/openssl/include"
+#export LDFLAGS="-L/Users/bdargan/code/homebrew/opt/openssl/lib"
+#export CPPFLAGS="-I/Users/bdargan/code/homebrew/opt/openssl/include"
 
 source `which aws_zsh_completer.sh`
+#source watson.zsh-completion

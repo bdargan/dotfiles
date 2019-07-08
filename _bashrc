@@ -6,3 +6,16 @@ fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 #[[ -s "/Users/Brett/.gvm/bin/gvm-init.sh" ]] && source "/Users/Brett/.gvm/bin/gvm-init.sh"
+
+# make files, that use bash shell wont use .profile or .bash_profile
+##export NVM_DIR="$HOME/.nvm"
+#source "/Users/bdargan/code/homebrew/opt/nvm/nvm.sh"
+
+#X_NVM_VER=`nvm current`
+#REQD_NVM_VERSION=v8.12.0
+
+#if [ ! "${X_NVM_VER}" == "${REQD_NVM_VERSION}" ]
+#then
+#  echo "nvm use $REQD_NVM_VERSION"
+#  nvm use $REQD_NVM_VERSION
+#fi

@@ -1,6 +1,6 @@
 # Shortcuts
 alias h="history"
-alias v="vim"
+#alias v="vim"
 alias o="open"
 alias oo="open ."
 
@@ -40,6 +40,7 @@ alias l="ls -l ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -la ${colorflag}"
+alias ll="ls -la ${colorflag}"
 
 alias lsd='ls -l ${colorflag} | grep "^d"'
 
@@ -163,10 +164,6 @@ alias cleargitpass='security delete-internet-password -l  git-codecommit.us-west
 #docker
 alias docker-rm-old-containers='docker rm $( docker ps -q -f status=exited)'
 alias docker-rm-dangling-images='docker rmi $( docker images -q -f dangling=true)'
-
-# private docker registry
-alias npm-default='npm config set registry https://registry.npmjs.org'
-alias npm-sinopia='npm config set registry http://localhost:4873/'
 
 autoload -U zmv
 alias mmv='noglob zmv -W'

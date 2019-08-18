@@ -3,7 +3,7 @@
 	UseHttpPath = true
 [user]
 	name = Brett Dargan
-	email = bdargan@brettdargan.com
+	email = brett.dargan@gmail.com
 [core]
 	excludesfile = /Users/brett.dargan/.gitignore_global
 [difftool "sourcetree"]

@@ -1,16 +1,45 @@
-# ag installed auto-completed to /Users/brett.dargan/share/zsh/site-functions
-
 export PATH=$PATH:$HOME/bin
 
-[ -f $HOME/.aliases ] && source .aliases
-[ -f $HOME/.aliases-private ] && source .aliases-private
+#echo $FPATH
+
+autoload -Uz compinit
+compinit -C
+
+source /usr/local/aws/bin/aws_zsh_completer.sh
 
 ### Added by Zplugin's installer
-source '/Users/brett.dargan/.zplugin/bin/zplugin.zsh'
+source "$HOME/.zplugin/bin/zplugin.zsh"
+source "$HOME/.zsh.plugins.zsh"
+###
 
-source $HOME/.zsh.plugins.zsh
-
-alias='j=fasd_cd -d -i'
 autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
+
+# optimization
+#autoload -Uz compinit
+#for dump in ~/.zcompdump(N.mh+24); do
+#  compinit
+#done
+#compinit -C
+#source /usr/local/aws/bin/aws_zsh_completer.sh
+
+source .aliases
+[ -f $HOME/.aliases-private ] && source .aliases-private
+
+source .history.zsh              #history
+
+# MISC
+unsetopt correct_all            # I don't care for 'suggestions' from ZSH
+
+# PATH
+typeset -U path                 # keep duplicates out of the path
+
+#path+=(.)                       # append current directory to path (controversial)
+
+setopt AUTO_CD                 # cd with dir name
+
+# Fuzzy search for history etc.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/Users/brett.dargan/opt/mysql-client/bin:$PATH:/usr/local/aws/bin"

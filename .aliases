@@ -1,0 +1,191 @@
+# Shortcuts
+alias h="history"
+#alias v="vim"
+alias o="open"
+alias oo="open ."
+
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias j='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+alias ppj="python -mjson.tool"
+#alias ppx=""
+
+# timestamps
+alias time1='date "+%Y%m%dT%H%M%S"'
+alias time2='date "+%Y-%m-%dT%H:%M:%S"'
+alias time3='date "+%Y-%m-%dT%H:%M:%S"'
+
+
+#Search
+alias ag='nocorrect ag'
+
+#Web Stuff
+
+
+# if exa installed
+if (( $+commands[exa] )) {
+alias ls='exa'                                                          # ls
+alias l='exa -lbF --git'                                                # list, size, type, git
+alias ll='exa -lbGF --git'                                             # long list
+alias llm='exa -l -r --sort=modified --git'                            # long list, modified date sort reverse
+alias llmg='exa -lbG -r --sort=modified --git'                            # long list, modified date sort reverse
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+
+# specialty views
+alias lS='exa -1'                                                              # one column, just names
+alias ltr='exa --tree --level=2'                                         # tree
+} else {
+# Detect which `ls` flavor is in use
+ls --version &>/dev/null
+if [ $? -eq 0 ]; then
+  lsflags="--color --group-directories-first -F"
+else
+  lsflags="-GF"
+  export CLICOLOR=1
+fi
+alias ls="ls ${lsflags}"
+alias ll="ls ${lsflags} -l"
+alias la="ls ${lsflags} -la"
+
+# Always use color output for `ls`
+#alias ls="command ls ${colorflag}"
+#export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+}
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Get OS X Software Updates, and update Homebrew, npm, and their installed packages
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g'
+
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
+
+alias duu='for i in $(ls -F -c1  /Volumes | grep -v "\@$"); diskutil umount "/Volumes/$i"'
+alias duf='for i in $(ls -F -c1  /Volumes | grep -v "\@$"); diskutil unmount force "/Volumes/$i"'
+alias vbox='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# Canonical hex dump; some systems have this symlinked
+#type hd > /dev/null || alias hd="hexdump -C"
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+type md5sum > /dev/null || alias md5sum="md5"
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# File size
+alias fs="stat -c \"%s bytes\""
+
+# ROT13-encode text. Works for decoding, too! ;)
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias disablesuddenmotionsensor="sudo pmset -a sms 0"
+alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+alias spotoff="sudo mdutil -a -i off"
+alias spoton="sudo mdutil -a -i on"
+
+alias plistbuddy="/usr/libexec/PlistBuddy"
+alias emacs=emacsf
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+#geth => get http
+for method in get head post put delete trace options patch; do
+	alias "${method}h=curl -X `echo $method | tr a-z A-Z`"
+done
+
+#gett => get http timing only
+#getht => get http headers and timing only
+#gethz => get http headers and timing only
+for method in get head post put delete trace options patch; do
+	alias "${method}ht=curl -siv -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+	alias "${method}t=curl -s -X `echo $method | tr a-z A-Z` -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+	alias "${method}tz=curl -s -X `echo $method | tr a-z A-Z` --compressed -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+        alias "${method}hz=curl -iv -X `echo $method | tr a-z A-Z` --compressed -w"connect_time:%{time_connect},first_byte:%{time_starttransfer},time:%{time_total},size:%{size_download}\n" -o /dev/null "
+done
+
+#Dates
+alias woy='date +"%gW%W"'
+alias Ymd='date +"%Y-%m-%d"'
+alias ymd='date +"%y-%m-%d"'
+alias dmy='date +"%d-%m-%y"'
+alias dmyy='date +"%d-%m-%Y"'
+alias ymond='date +"%y-%b-%d"'
+alias yymond='date +"%Y-%b-%d"'
+alias dmony='date +"%d-%b-%y"'
+alias dmonyy='date +"%d-%b-%Y"'
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+alias selfsignedcert='openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes'
+alias onelinepem='while read line; do printf "$line\\"; printf "n"; done'
+
+#alias genkeys='openssl genrsa 2048'
+#csrreq openssl req -new -nodes -newkey rsa:2048 -sha256 -keyout private.pem -out server.csr
+
+alias pwdgen='apg -a 1 -m20 -n 12'
+#apg -a 1 -m20 -n 30 -E '<>[]//'
+alias rndc64='dd if=/dev/urandom bs=64 count=1 2>/dev/null | uuencode - | head -n 2 | grep -v begin | cut -b 2-64'
+alias rndcbase64='head -c 64 /dev/urandom | base64'
+
+#requires brew install coretuils
+if [[ $('uname') == 'Darwin' ]]; then
+        alias readlink='greadlink'
+fi
+
+#aws codecommit
+alias cleargitpass='security delete-internet-password -l  git-codecommit.us-west-2.amazonaws.com'
+
+#docker
+alias docker-rm-old-containers='docker rm $( docker ps -q -f status=exited)'
+alias docker-rm-dangling-images='docker rmi $( docker images -q -f dangling=true)'
+
+autoload -U zmv
+alias mmv='noglob zmv -W'
+alias mmvn='noglob zmv -W -n'
+
+
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+
+# runs an npm script via lerna for a the current module
+alias lr='lerna run --stream --scope $(node -p "require(\"./package.json\").name")'
+
+# runs "yarn build" (build + test) for the current module
+alias yb='yarn build'
+alias lb='lr build'
+alias lt='lr test'
+
+# runs "yarn watch" for the current module (recommended to run in a separate terminal session):
+alias lw='lr watch'
+alias dotfiles='/usr/bin/git --git-dir=/Users/brett.dargan/.dotfiles/ --work-tree=/Users/brett.dargan'

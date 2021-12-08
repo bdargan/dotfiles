@@ -22,7 +22,7 @@ rsync --recursive --verbose --exclude '.git' .dotfiles-tmp/ $HOME/
 rm --recursive .dotfiles-tmp
 ```
 
-## Update
+## Add dotfiles
 ```sh
 dotfiles status
 dotfiles add .gitconfig

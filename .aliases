@@ -189,3 +189,5 @@ alias lt='lr test'
 # runs "yarn watch" for the current module (recommended to run in a separate terminal session):
 alias lw='lr watch'
 alias dotfiles='/usr/bin/git --git-dir=/Users/brett.dargan/.dotfiles/ --work-tree=/Users/brett.dargan'
+alias notes='/usr/bin/git --git-dir=/Users/brett.dargan/dev_d/.icloud.notes.smart/ --work-tree=/Users/brett.dargan/Library/Mobile\ Documents/com~apple~CloudDocs/notes/smart'
+
